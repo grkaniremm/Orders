@@ -1,0 +1,43 @@
+<h3 class="bg-primary text-white p-2">Sipariş Listesi</h3>
+<table class="table table-bordered table-spriped">
+  <thead>
+    <tr>
+      <th>Müşteri No</th>
+      <th>Müşteri Sipariş No</th>
+      <th>Çıkış Adresi</th>
+      <th>Varış Adresi</th>
+      <th>Miktar</th>
+      <th>Miktar Birim</th>
+      <th>Ağırlık</th>
+      <th>Ağırlık Birim</th>
+      <th>Malzeme Kodu</th>
+      <th>Malzeme Adı</th>
+      <th>Not</th>
+      <th>Statü</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let o of model.orderresponse">
+      <td>{{o.musteriNo}}</td>
+      <td>{{o.musteriSiparisNo}}</td>
+      <td>{{o.cikisAdresi}}</td>
+      <td>{{o.varisAdresi}}</td>
+      <td>{{o.miktar}}</td>
+      <td>{{o.miktarBirim}}</td>
+      <td>{{o.agirlik}}</td>
+      <td>{{o.agirlikBirim}}</td>
+      <td>{{o.malzemeKodu}}</td>
+      <td>{{o.malzemeAdi}}</td>
+      <td>{{o.not}}</td>
+      <td>{{o.statu}}</td>
+      <td>
+        <!-- <button class="btn btn-primary" (click)="editItem(o)">Düzenle</button> -->
+        <button mat-raised-button  (click)="OpenDialog(o)">Düzenle</button>
+
+      </td>
+    </tr>
+  </tbody>
+  </table>
+
+
+

@@ -1,0 +1,81 @@
+<div class="modal-header">
+<h2 mat-dialog-title class="modal-title">Sipariş Düzenleme</h2>
+<button type="button" class="close"
+aria-label="Close" (click)="close()">
+<span aria-hidden="true">
+×
+</span>
+</button>
+</div>
+<mat-dialog-content>
+<div class="modal-body">
+  <div class="col-12">
+  <label for="musterino" class="col-6">Müşteri No</label>
+  <input type="text" disabled id="musteriNo" value={{data.musteriNo}} class="col-6" >
+  </div>
+<div class="col-12">
+  <label for="musterisipno" class="col-6">Müşteri Sipariş No</label>
+  <input type="text" disabled id="musteriSiparisNo" value={{data.musteriSiparisNo}} class="col-6">
+</div>
+<div class="col-12">
+  <label for="Statu" class="col-6">Statu</label>
+  <mat-form-field class="col-6 align-self-end">
+  <mat-select [(value)]="data.statu">
+    <mat-option *ngFor="let s of model.status" [value]="s.statuKodu" >{{s.aciklamasi}}</mat-option>
+  </mat-select>
+</mat-form-field>
+</div>
+<mat-dialog-actions style="justify-content: center;" class="col-12">
+  <button mat-button mat-dialog-clos mat-dialog-close="true"  class="col-3">Vazgeç</button>
+  <button mat-button  (click)="kaydet()"  class="col-3">Kaydet</button>
+</mat-dialog-actions>
+</div>
+</mat-dialog-content>
+
+
+<!--
+  <div class="modal-header">
+      <h4 class="modal-title"
+          id="modal-basic-title">
+         Sipariş Listesi
+      </h4>
+      <button type="button" class="close"
+              aria-label="Close" (click)=
+              "modal.dismiss('Cross click')">
+
+          <span aria-hidden="true">
+              ×
+          </span>
+      </button>
+  </div>
+  <div class="modal-body">
+      <form >
+          <div class="form-group">
+            <label for="musterino"> Müşteri No</label>
+            <div class="input-group">
+                <input type="text" disabled id="musteriNo" value="{{musteriNo}}" class="form-control">
+            </div>
+              <label for="musterisipno"> Müşteri Sipariş No</label>
+              <div class="input-group">
+                  <input type="text" disabled id="musteriSiparisNo" value="{{musteriSiparisNo}}" class="form-control">
+              </div>
+              <label for="statu"> Statü</label>
+
+              <div class="input-group">
+                  <input type="text" id="statu" value="{{statu}}" class="form-control">
+              </div>
+
+
+          </div>
+      </form>
+  </div>
+  <div class="modal-footer">
+      <button type="button"
+          class="btn btn-outline-dark"
+          (click)="modal.close('Save click')">
+          Kaydet
+      </button>
+  </div>
+
+
+ -->
